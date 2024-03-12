@@ -52,7 +52,7 @@ export default function Exercise() {
       const doneWorkout = {
         workoutType: workoutType, 
         date: selectedDate.dateString, 
-        distance: unit === 'km' ? convertTextInput(distance).toFixed(2) : convertToMiles(convertTextInput(distance)).toFixed(2), 
+        distance: unit === 'km' ? convertTextInput(distance).toFixed(2) : convertToKilometers(convertTextInput(distance)).toFixed(2), 
         duration: convertTextInput(duration)
       };
       const workoutsUnsorted = [...workout, doneWorkout];
@@ -74,8 +74,8 @@ export default function Exercise() {
     return(parseFloat(input.replace(',', '.')));
   }
 
-  const convertToMiles = (km) => {
-    return(km*1.60934);
+  const convertToKilometers = (mi) => {
+    return(mi*1.60934);
   }
 
   return (
